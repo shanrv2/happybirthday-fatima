@@ -1,0 +1,495 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff5fa;
+    color: #333;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    height: 65px;
+
+    background: #ff1493;
+    color: white;
+
+    padding: 0 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 2px 8px rgba(255, 20, 147, 0.2);
+}
+
+header h1 {
+    font-size: 22px;
+}
+
+header span {
+    font-size: 14px;
+    color: white;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    display: flex;
+
+    min-height: calc(100vh - 65px);
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 250px;
+
+    flex-shrink: 0;
+
+    background: white;
+
+    border-right: 1px solid #ffc4df;
+
+    padding: 25px 15px;
+
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    font-size: 16px;
+
+    color: #ff1493;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   LESSON BUTTON
+========================= */
+
+.lesson {
+    display: block;
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-bottom: 6px;
+
+    border: none;
+
+    background: transparent;
+
+    text-align: left;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    color: #555;
+
+    transition: 0.2s;
+}
+
+.lesson:hover {
+    background: #ffe1ef;
+
+    color: #ff1493;
+}
+
+.lesson.active {
+    background: #ff1493;
+
+    font-weight: bold;
+
+    color: white;
+
+    box-shadow: 0 3px 8px rgba(255, 20, 147, 0.2);
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    flex: 1;
+
+    padding: 35px;
+
+    max-width: 1200px;
+
+    min-width: 0;
+}
+
+.content h2 {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
+    color: #ff1493;
+}
+
+.description {
+    color: #777;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   SYNTAX
+========================= */
+
+.syntax {
+    background: #fff;
+
+    color: #444;
+
+    padding: 18px;
+
+    border-radius: 8px;
+
+    margin-bottom: 30px;
+
+    border: 1px solid #ffc4df;
+
+    box-shadow: 0 3px 10px rgba(255, 20, 147, 0.08);
+}
+
+.syntax-title {
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+
+    color: #ff1493;
+}
+
+.syntax pre {
+    font-family: Consolas, monospace;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    white-space: pre-wrap;
+
+    color: #555;
+}
+
+
+/* =========================
+   EXAMPLE
+========================= */
+
+.example-title {
+    font-size: 20px;
+
+    margin-bottom: 12px;
+
+    color: #ff1493;
+}
+
+
+/* =========================
+   EDITOR
+========================= */
+
+.editor {
+    background: white;
+
+    border: 1px solid #ffc4df;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 3px 12px rgba(255, 20, 147, 0.08);
+}
+
+
+/* =========================
+   TABS
+========================= */
+
+.tabs {
+    display: flex;
+
+    background: #ffe1ef;
+
+    border-bottom: 1px solid #ffc4df;
+}
+
+.tab {
+    border: none;
+
+    background: transparent;
+
+    padding: 12px 20px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    color: #b00064;
+
+    transition: 0.2s;
+}
+
+.tab:hover {
+    background: #ffc4df;
+
+    color: #ff1493;
+}
+
+.tab.active {
+    background: white;
+
+    color: #ff1493;
+
+    border-top: 3px solid #ff1493;
+}
+
+
+/* =========================
+   WORKSPACE
+========================= */
+
+.workspace {
+    display: flex;
+
+    min-height: 350px;
+}
+
+
+/* =========================
+   CODE AREA
+========================= */
+
+.code-area {
+    width: 50%;
+
+    padding: 15px;
+
+    border-right: 1px solid #ffc4df;
+}
+
+
+/* =========================
+   TEXTAREAS
+========================= */
+
+.code-area textarea {
+    width: 100%;
+
+    height: 270px;
+
+    resize: none;
+
+    border: 1px solid #ff69b4;
+
+    outline: none;
+
+    background: #fff0f7;
+
+    color: #333;
+
+    padding: 15px;
+
+    font-family: Consolas, monospace;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    border-radius: 6px;
+
+    display: none;
+}
+
+.code-area textarea:focus {
+    border: 2px solid #ff1493;
+
+    background: white;
+}
+
+
+/* =========================
+   ACTIVE EDITOR
+========================= */
+
+.code-area textarea.active-editor {
+    display: block;
+}
+
+
+/* =========================
+   PREVIEW
+========================= */
+
+.preview-area {
+    width: 50%;
+
+    padding: 15px;
+}
+
+.preview-label {
+    font-size: 13px;
+
+    color: #ff1493;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+iframe {
+    width: 100%;
+
+    height: 270px;
+
+    border: 1px solid #ffb6d9;
+
+    border-radius: 6px;
+
+    background: white;
+}
+
+
+/* =========================
+   CONTROLS
+========================= */
+
+.controls {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding: 12px 15px;
+
+    border-top: 1px solid #ffc4df;
+
+    background: #fff8fc;
+}
+
+.controls button {
+    border: none;
+
+    padding: 9px 16px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+
+/* RUN BUTTON */
+
+.run {
+    background: #ff1493;
+
+    color: white;
+}
+
+.run:hover {
+    background: #e60082;
+
+    transform: translateY(-1px);
+}
+
+
+/* RESET BUTTON */
+
+.reset {
+    background: #ffe1ef;
+
+    color: #b00064;
+}
+
+.reset:hover {
+    background: #ffc4df;
+
+    color: #ff1493;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #fff5fa;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #ff69b4;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .workspace {
+        flex-direction: column;
+    }
+
+    .code-area,
+    .preview-area {
+        width: 100%;
+    }
+
+    .code-area {
+        border-right: none;
+
+        border-bottom: 1px solid #ffc4df;
+    }
+
+}
